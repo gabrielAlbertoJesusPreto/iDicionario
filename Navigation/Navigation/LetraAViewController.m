@@ -7,15 +7,25 @@
 //
 
 #import "LetraAViewController.h"
-#import "LetraBViewController.h"
 
 @implementation LetraAViewController
 
+@synthesize letra;
 
+ int contLetra = 0;
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    self.title = @"A";
+    letra = [NSString stringWithFormat:@"%c",contLetra+65];
+    
+    if(contLetra==26){
+        self.title = @"";
+        [self.navigationController popToRootViewControllerAnimated:true];
+        contLetra = 0;
+    }
+    
+    self.title = letra;
+    
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
@@ -30,19 +40,20 @@
     
     [self.view addSubview:botao];
     
- 
+    
 }
 
 -(void)next:(id)sender {
-    LetraBViewController *proximo = [[LetraBViewController alloc]
+    LetraAViewController *proximo = [[LetraAViewController alloc]
                                               initWithNibName:nil
                                             bundle:NULL];
     [self.navigationController pushViewController:proximo
                                          animated:YES];
     
+    
+    contLetra++;
+    NSLog(@"%i",contLetra);
+    
 }
-
-
-
 
 @end

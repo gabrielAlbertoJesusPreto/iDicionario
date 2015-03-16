@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface LetraAViewController : UIViewController
+{
+    NSString *letra;
+}
+
+@property NSString *letra;
+
++ (instancetype)sharedInstance;
 
 @end

@@ -20,7 +20,7 @@
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* LetraAViewController.m */; };
-		27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7F18BA8B210053A99C /* LetraBViewController.m */; };
+		5EEECFF71AB711420061FA22 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEECFF61AB711420061FA22 /* Word.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
 		27156F7B18BA89430053A99C /* LetraAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraAViewController.h; sourceTree = "<group>"; };
 		27156F7C18BA89430053A99C /* LetraAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraAViewController.m; sourceTree = "<group>"; };
-		27156F7E18BA8B210053A99C /* LetraBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraBViewController.h; sourceTree = "<group>"; };
-		27156F7F18BA8B210053A99C /* LetraBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraBViewController.m; sourceTree = "<group>"; };
+		5EEECFF51AB711420061FA22 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		5EEECFF61AB711420061FA22 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,6 @@
 				27156F5318B76AF50053A99C /* Supporting Files */,
 				27156F7B18BA89430053A99C /* LetraAViewController.h */,
 				27156F7C18BA89430053A99C /* LetraAViewController.m */,
-				27156F7E18BA8B210053A99C /* LetraBViewController.h */,
-				27156F7F18BA8B210053A99C /* LetraBViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -132,6 +130,8 @@
 				27156F5518B76AF50053A99C /* InfoPlist.strings */,
 				27156F5818B76AF50053A99C /* main.m */,
 				27156F5A18B76AF50053A99C /* Navigation-Prefix.pch */,
+				5EEECFF51AB711420061FA22 /* Word.h */,
+				5EEECFF61AB711420061FA22 /* Word.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,8 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
+				5EEECFF71AB711420061FA22 /* Word.m in Sources */,
 				27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */,
-				27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +454,7 @@
 				27156F7718B76AF50053A99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27156F7818B76AF50053A99C /* Build configuration list for PBXNativeTarget "NavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				27156F7A18B76AF50053A99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
