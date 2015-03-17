@@ -11,10 +11,9 @@
 @interface LetraAViewController : UIViewController
 {
     NSString *letra;
+    NSArray *bandas;
 }
 
 @property NSString *letra;
-
-+ (instancetype)sharedInstance;
 
 @end
