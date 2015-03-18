@@ -20,6 +20,7 @@
     
     self.navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:viewController];
+    
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;

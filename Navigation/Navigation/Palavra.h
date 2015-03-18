@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Band : NSObject{
+@interface Palavra : NSObject{
     NSString *palavra;
     UIImage *imagem;
 }
+
+@property NSString *palavra;
+@property UIImage *imagem;
+
+- (id) initWithPalavra:(NSString*)name image:(UIImage*)image;
 @end

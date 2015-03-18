@@ -8,7 +8,9 @@
 
 #import "Palavra.h"
 
-@implementation Band
+@implementation Palavra
+
+@synthesize palavra, imagem;
 
 - (id) initWithPalavra:(NSString*)name image:(UIImage*)image{
     

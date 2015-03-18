@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Palavras.h"
 
 @interface LetraAViewController : UIViewController
-{
-    NSString *letra;
-    NSArray *bandas;
-}
+
 
 @property NSString *letra;
+@property Palavras *arrayPalavras;
 
 @end

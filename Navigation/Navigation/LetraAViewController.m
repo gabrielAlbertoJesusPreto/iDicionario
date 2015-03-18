@@ -7,19 +7,19 @@
 //
 
 #import "LetraAViewController.h"
+#import "Palavras.h"
 #import "Palavra.h"
 
 @implementation LetraAViewController
 
-@synthesize letra;
+@synthesize letra, arrayPalavras;
 
- int contLetra = 0;
+int contLetra = 0;
+
 
 -(void) viewDidLoad {
     
-    //UIImageView imgA = [UIImageView alloc] ini
-    //Band *a = [[Band alloc] initWithName:@"Arctic Monkeys" ima];
-    
+    arrayPalavras = [Palavras getInstance];
     
     [super viewDidLoad];
     letra = [NSString stringWithFormat:@"%c",contLetra+65];
@@ -37,18 +37,30 @@
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
     
-    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back:)];
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
     self.navigationItem.hidesBackButton = YES;
     self.navigationItem.leftBarButtonItem = back;
+    if(contLetra==0){
+        back.enabled = FALSE;
+    }
     
-    UIButton *botao = [UIButton
-                                        buttonWithType:UIButtonTypeSystem];
+    UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
+    NSString *texto = [[arrayPalavras.palavras objectAtIndex:contLetra] palavra];
+    
     [botao
-     setTitle:@"Mostre uma palavra, uma figura e leia a palavra ao apertar um botao"
+     setTitle:texto
      forState:UIControlStateNormal];
     [botao sizeToFit];
-    botao.center = self.view.center;
+    botao.center = CGPointMake(self.view.frame.size.width/2,100);
     
+    //UIImageView *imagemview = [[UIImageView alloc]initWithImage:[[arrayPalavras.palavras objectAtIndex:contLetra] imagem]];
+    UIImageView *imagemview = [[UIImageView alloc] initWithFrame:CGRectMake(110.0f, 200.0f, 100, 100)];
+    imagemview.image = [[arrayPalavras.palavras objectAtIndex:contLetra] imagem];
+    //imagemview.hidden = TRUE;
+    
+    
+    
+    [self.view addSubview:imagemview];
     [self.view addSubview:botao];
     
     
@@ -63,16 +75,15 @@
     
     
     contLetra++;
+
     NSLog(@"%i",contLetra);
     
 }
 
 -(void)back:(id)sender{
-    if(contLetra>=1){
-        [self.navigationController popViewControllerAnimated:YES];
-        contLetra--;
-        NSLog(@"%i",contLetra);
-    }
+    [self.navigationController popViewControllerAnimated:YES];
+    contLetra--;
+    NSLog(@"%i",contLetra);
 }
 
 @end
