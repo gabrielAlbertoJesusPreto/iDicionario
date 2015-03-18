@@ -54,14 +54,26 @@ int contLetra = 0;
     botao.center = CGPointMake(self.view.frame.size.width/2,100);
     
     //UIImageView *imagemview = [[UIImageView alloc]initWithImage:[[arrayPalavras.palavras objectAtIndex:contLetra] imagem]];
-    UIImageView *imagemview = [[UIImageView alloc] initWithFrame:CGRectMake(110.0f, 200.0f, 100, 100)];
+    UIImageView *imagemview = [[UIImageView alloc] initWithFrame:CGRectMake(60.0f, 200.0f, 200, 200)];
     imagemview.image = [[arrayPalavras.palavras objectAtIndex:contLetra] imagem];
     //imagemview.hidden = TRUE;
     
-    
-    
     [self.view addSubview:imagemview];
     [self.view addSubview:botao];
+    
+    //Disappear
+    [UIView animateWithDuration:0.5 animations:^(void) {
+        imagemview.hidden = TRUE;
+        imagemview.alpha = 0;
+    }
+                     completion:^(BOOL finished){
+                         //Appear
+                         imagemview.hidden = false;
+                         [UIView animateWithDuration:0.5 animations:^(void) {
+                             //imagemview.alpha = 0;
+                             imagemview.alpha = 1;
+                         }];
+                     }];
     
     
 }
@@ -71,7 +83,7 @@ int contLetra = 0;
                                               initWithNibName:nil
                                             bundle:NULL];
     [self.navigationController pushViewController:proximo
-                                         animated:YES];
+                                         animated:NO];
     
     
     contLetra++;
@@ -85,5 +97,4 @@ int contLetra = 0;
     contLetra--;
     NSLog(@"%i",contLetra);
 }
-
 @end
