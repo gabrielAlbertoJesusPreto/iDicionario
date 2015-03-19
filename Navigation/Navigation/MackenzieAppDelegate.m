@@ -8,24 +8,36 @@
 
 #import "MackenzieAppDelegate.h"
 #import "LetraAViewController.h"
+#import "DicionarioTableViewController.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     LetraAViewController *viewController = [[LetraAViewController alloc]
-                                           initWithNibName:nil
-                                           bundle:nil];
-    
+                                           init];
+    DicionarioTableViewController *tableView = [[DicionarioTableViewController alloc]init];
+    self.tabBarController = [[UITabBarController alloc]init];
     
     self.navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:viewController];
+    self.tableController = [[DicionarioTableViewController alloc]init];
+    
+    
+    
+    NSArray *itens = [[NSArray alloc]initWithObjects:self.navigationController,tableView,nil];
+    
+    [self.tabBarController setViewControllers:itens];
+    
+    [self.navigationController.tabBarItem setTitle:@"Navigation"];
+    [self.navigationController.tabBarItem setImage:[UIImage imageNamed:@"navigation"]];
+    
+    [tableView.tabBarItem setTitle:@"Table"];
+    [tableView.tabBarItem setImage:[UIImage imageNamed:@"list"]];
     
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
-
-
+    self.window.rootViewController = self.tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

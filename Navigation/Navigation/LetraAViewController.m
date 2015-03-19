@@ -29,9 +29,7 @@ int contLetra = 0;
         contLetra = 0;
     }
     
-
-    
-    self.title = letra;
+    self.navigationItem.title = letra;
     
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
@@ -53,24 +51,23 @@ int contLetra = 0;
     [botao sizeToFit];
     botao.center = CGPointMake(self.view.frame.size.width/2,100);
     
-    //UIImageView *imagemview = [[UIImageView alloc]initWithImage:[[arrayPalavras.palavras objectAtIndex:contLetra] imagem]];
     UIImageView *imagemview = [[UIImageView alloc] initWithFrame:CGRectMake(60.0f, 200.0f, 200, 200)];
     imagemview.image = [[arrayPalavras.palavras objectAtIndex:contLetra] imagem];
-    //imagemview.hidden = TRUE;
     
+    UITabBar *tabbar = [[UITabBar alloc] init];
     [self.view addSubview:imagemview];
     [self.view addSubview:botao];
+    [self.view addSubview:tabbar];
     
-    //Disappear
+    //Desaparece
     [UIView animateWithDuration:0.5 animations:^(void) {
         imagemview.hidden = TRUE;
         imagemview.alpha = 0;
     }
                      completion:^(BOOL finished){
-                         //Appear
+                         //Aparece
                          imagemview.hidden = false;
                          [UIView animateWithDuration:0.5 animations:^(void) {
-                             //imagemview.alpha = 0;
                              imagemview.alpha = 1;
                          }];
                      }];
@@ -93,7 +90,7 @@ int contLetra = 0;
 }
 
 -(void)back:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     contLetra--;
     NSLog(@"%i",contLetra);
 }

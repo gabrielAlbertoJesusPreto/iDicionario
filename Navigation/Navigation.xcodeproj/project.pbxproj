@@ -20,6 +20,7 @@
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* LetraAViewController.m */; };
+		5E7AA9491ABAE40C004DE759 /* DicionarioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7AA9481ABAE40C004DE759 /* DicionarioTableViewController.m */; };
 		5E7CA1CE1AB863F700D3F3FE /* Palavras.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CA1CD1AB863F700D3F3FE /* Palavras.m */; };
 		5EEECFFA1AB720D00061FA22 /* Palavra.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEECFF91AB720D00061FA22 /* Palavra.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,8 @@
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
 		27156F7B18BA89430053A99C /* LetraAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraAViewController.h; sourceTree = "<group>"; };
 		27156F7C18BA89430053A99C /* LetraAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraAViewController.m; sourceTree = "<group>"; };
+		5E7AA9471ABAE40C004DE759 /* DicionarioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicionarioTableViewController.h; sourceTree = "<group>"; };
+		5E7AA9481ABAE40C004DE759 /* DicionarioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicionarioTableViewController.m; sourceTree = "<group>"; };
 		5E7CA1CC1AB863F700D3F3FE /* Palavras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palavras.h; sourceTree = "<group>"; };
 		5E7CA1CD1AB863F700D3F3FE /* Palavras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palavras.m; sourceTree = "<group>"; };
 		5EEECFF81AB720D00061FA22 /* Palavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palavra.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				27156F5318B76AF50053A99C /* Supporting Files */,
 				27156F7B18BA89430053A99C /* LetraAViewController.h */,
 				27156F7C18BA89430053A99C /* LetraAViewController.m */,
+				5E7AA9471ABAE40C004DE759 /* DicionarioTableViewController.h */,
+				5E7AA9481ABAE40C004DE759 /* DicionarioTableViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7AA9491ABAE40C004DE759 /* DicionarioTableViewController.m in Sources */,
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
 				27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */,
 				5EEECFFA1AB720D00061FA22 /* Palavra.m in Sources */,
