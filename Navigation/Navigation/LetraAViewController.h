@@ -14,5 +14,8 @@
 
 @property NSString *letra;
 @property Palavras *arrayPalavras;
-
+@property UIToolbar *toolbar;
+@property UIBarButtonItem *toolBarTextField;
+@property UITextField *fieldTool;
+@property UIButton *botao;
 @end

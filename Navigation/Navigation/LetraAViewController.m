@@ -12,7 +12,7 @@
 
 @implementation LetraAViewController
 
-@synthesize letra, arrayPalavras;
+@synthesize letra, arrayPalavras,toolbar, toolBarTextField, fieldTool, botao;
 
 int contLetra = 0;
 
@@ -31,8 +31,21 @@ int contLetra = 0;
     
     self.navigationItem.title = letra;
     
+    toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 475, self.view.frame.size.width, 44)];
+    toolbar.backgroundColor = [UIColor clearColor];
+    
+    fieldTool = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 300, 20)];
+    fieldTool.placeholder = @"Altere palavra...";
+    
+    
+    
+    toolBarTextField = [[UIBarButtonItem alloc] initWithCustomView:fieldTool];
+    
+    [toolbar setItems:[NSArray arrayWithObject:toolBarTextField]];
+    
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
+    
     self.navigationItem.rightBarButtonItem=next;
     
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
@@ -42,7 +55,7 @@ int contLetra = 0;
         back.enabled = FALSE;
     }
     
-    UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
+    botao = [UIButton buttonWithType:UIButtonTypeSystem];
     NSString *texto = [[arrayPalavras.palavras objectAtIndex:contLetra] palavra];
     
     [botao
@@ -58,6 +71,7 @@ int contLetra = 0;
     [self.view addSubview:imagemview];
     [self.view addSubview:botao];
     [self.view addSubview:tabbar];
+    [self.view addSubview:toolbar];
     
     //Desaparece
     [UIView animateWithDuration:0.5 animations:^(void) {
@@ -86,6 +100,7 @@ int contLetra = 0;
     contLetra++;
 
     NSLog(@"%i",contLetra);
+    fieldTool.placeholder = @"Alterar palavra...";
     
 }
 
@@ -93,5 +108,10 @@ int contLetra = 0;
     [self.navigationController popViewControllerAnimated:NO];
     contLetra--;
     NSLog(@"%i",contLetra);
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [botao setTitle:fieldTool.text forState:UIControlStateNormal];
+    [fieldTool resignFirstResponder];
 }
 @end
