@@ -138,7 +138,7 @@ float x01, y01;
     if([touch view] == imagemview){
         CGPoint location = [touch locationInView:self.view];
         //imagemview.center = location;
-        [imagemview setFrame:CGRectMake(location.x, location.y, 200, 200)];
+        [imagemview setFrame:CGRectMake(location.x-100, location.y-100, 200, 200)];
         
     }
          
