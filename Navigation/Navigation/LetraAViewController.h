@@ -16,6 +16,10 @@
 @property Palavras *arrayPalavras;
 @property UIToolbar *toolbar;
 @property UIBarButtonItem *toolBarTextField;
+@property UIBarButtonItem *toolBarButton;
 @property UITextField *fieldTool;
 @property UIButton *botao;
+@property UIButton *buttonTool;
+@property UIImageView *imagemview;
+
 @end
