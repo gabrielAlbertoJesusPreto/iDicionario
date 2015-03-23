@@ -121,6 +121,7 @@ float x01, y01;
     UITouch *touch = [[event allTouches] anyObject];
     
     if([touch view] == imagemview){
+        [imagemview setFrame:CGRectMake(60, 200, 250, 250)];
         CGPoint location = [touch locationInView:touch.view];
         imagemview.center = location;
     }
@@ -132,7 +133,15 @@ float x01, y01;
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if([touch view] == imagemview){
+        CGPoint location = [touch locationInView:self.view];
+        //imagemview.center = location;
+        [imagemview setFrame:CGRectMake(location.x, location.y, 200, 200)];
+        
+    }
+         
     fieldTool.text = @"";
     [fieldTool setPlaceholder:@"Altera a palavra..."];
     dragging = NO;
